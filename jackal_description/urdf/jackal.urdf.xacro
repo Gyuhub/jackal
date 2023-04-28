@@ -259,4 +259,57 @@
 
   <!-- Optional for Clearpath internal softwares -->
   <xacro:include filename="$(optenv CPR_URDF_EXTRAS empty.urdf)" />
+
+
+  <!-- ROAS TOP -->
+  <link name="top_structure"> 
+    <visual> 
+      <origin xyz="0 0 0" rpy="0 0 0"/> 
+      <geometry> 
+        <mesh filename="package://jackal_description/meshes/A-PSI-23-0313-01_A0001.STL"/>
+      </geometry> 
+      <material name="silver"> 
+        <color rgba="0.75 0.75 0.75 1"/> 
+      </material> 
+    </visual> 
+    <collision> 
+      <origin xyz="0 0 0" rpy="0 0 0"/> 
+      <geometry> 
+        <mesh filename="package://jackal_description/meshes/A-PSI-23-0313-01_A0001.STL"/> 
+      </geometry> 
+    </collision> 
+  </link> 
+  
+  <joint name="top_structure_joint" type="fixed"> 
+    <parent link="base_link"/> 
+    <child link="top_structure"/> 
+    <origin xyz="0 0 -0.0690" rpy="0 0 0"/> 
+  </joint>
+
+
+<link name="camera_link"/>
+
+<joint name="camera_joint" type="fixed"> 
+    <parent link="top_structure"/> 
+    <child link="camera_link"/> 
+    <origin xyz="0.28165 0 0.1461" rpy="0 0 0"/> 
+</joint>
+
+<link name="tim571"/>
+
+<joint name="Tim571_joint" type="fixed"> 
+    <parent link="top_structure"/> 
+    <child link="tim571"/> 
+    <origin xyz="0.169 0 0.28356" rpy="0 0 0"/> 
+</joint>
+
+<link name="velodyne"/>
+
+<joint name="Velodyne_joint" type="fixed"> 
+    <parent link="top_structure"/> 
+    <child link="velodyne"/> 
+    <origin xyz="0.050 0 0.3575" rpy="0 0 0"/> 
+</joint>
+
+
 </robot>
