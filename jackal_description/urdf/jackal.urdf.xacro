@@ -18,6 +18,9 @@
 
   <xacro:property name="mount_spacing" value="0.120" />
 
+  <xacro:arg name="gazebo" default="true" />
+  <xacro:property name="use_gazebo" value="$(arg gazebo)" />
+
   <material name="dark_grey"><color rgba="0.2 0.2 0.2 1.0" /></material>
   <material name="light_grey"><color rgba="0.4 0.4 0.4 1.0" /></material>
   <material name="yellow"><color rgba="0.8 0.8 0.0 1.0" /></material>

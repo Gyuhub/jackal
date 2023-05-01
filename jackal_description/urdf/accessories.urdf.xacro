@@ -497,4 +497,28 @@
     </gazebo>
   </xacro:if>
 
+  <!-- Create virtual URDF and corresponding plugins for the Gazebo -->
+  <xacro:if value="${use_gazebo}">
+    <!-- Intel Realsense D435 Camera -->
+    <xacro:include filename="$(find jackal_description)/urdf/accessories/realsense_d435.urdf.xacro" />
+    <xacro:D435 name="virtual_camera" topics_ns="camera" parent="camera_link" publish_pointcloud="true">
+      <origin xyz="-0.015 0 -0.0125" rpy="0 0 0" />
+    </xacro:D435>
+
+    <!-- SICK TIM571 2D LiDAR -->
+    <xacro:include filename="$(find sick_scan)/urdf/sick_scan.urdf.xacro" />
+    <joint name="virtual_tim571_mount_joint" type="fixed">
+      <parent link="tim571" />
+      <child link="virtual_tim571_mount_link" />
+      <origin rpy="0 0 0" xyz="0 0 -0.01665"/>
+    </joint>
+    <xacro:sick_tim_57x name="virtual_tim571" ros_topic="sick_scan" />
+
+    <!-- Velodyne VLP-16 (Puck) 3D LiDAR -->
+    <xacro:VLP-16 parent="velodyne" name="virtual_velodyne" topic="velodyne_scan" organize_cloud="true" gpu="true">
+      <origin xyz="0 0 0" rpy="0 0 0.02" />
+    </xacro:VLP-16>
+
+  </xacro:if>
+
 </robot>
