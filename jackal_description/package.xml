@@ -19,7 +19,10 @@
   <run_depend>lms1xx</run_depend>
   <run_depend>pointgrey_camera_description</run_depend>
   <run_depend>sick_tim</run_depend>
+  <run_depend>sick_scan</run_depend>
   <run_depend>velodyne_description</run_depend>
+  <run_depend>realsense2_description</run_depend>
+  <run_depend>realsense_gazebo_plugin</run_depend>
 
   <export>
   </export>
