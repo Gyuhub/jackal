@@ -266,7 +266,7 @@
     <visual> 
       <origin xyz="0 0 0" rpy="0 0 0"/> 
       <geometry> 
-        <mesh filename="package://jackal_description/meshes/A-PSI-23-0313-01_A0001.STL"/>
+        <mesh filename="package://jackal_description/meshes/A-PSI-23-0313-01_A0001.obj"/>
       </geometry> 
       <material name="silver"> 
         <color rgba="0.75 0.75 0.75 1"/> 
@@ -275,7 +275,7 @@
     <collision> 
       <origin xyz="0 0 0" rpy="0 0 0"/> 
       <geometry> 
-        <mesh filename="package://jackal_description/meshes/A-PSI-23-0313-01_A0001.STL"/> 
+        <mesh filename="package://jackal_description/meshes/A-PSI-23-0313-01_A0001.obj"/> 
       </geometry> 
     </collision> 
   </link> 
