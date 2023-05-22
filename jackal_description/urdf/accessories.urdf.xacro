@@ -512,10 +512,10 @@
       <child link="virtual_tim571_mount_link" />
       <origin rpy="0 0 0" xyz="0 0 -0.01665"/>
     </joint>
-    <xacro:sick_tim_57x name="virtual_tim571" ros_topic="sick_scan" />
+    <xacro:sick_tim_57x name="virtual_tim571" ros_topic="sick_scan" samples="10"/>
 
     <!-- Velodyne VLP-16 (Puck) 3D LiDAR -->
-    <xacro:VLP-16 parent="velodyne" name="virtual_velodyne" topic="velodyne_scan" organize_cloud="true" gpu="true">
+    <xacro:VLP-16 parent="velodyne" name="virtual_velodyne" topic="velodyne_scan" organize_cloud="true" gpu="${use_gpu}">
       <origin xyz="0 0 0" rpy="0 0 0.02" />
     </xacro:VLP-16>
 
