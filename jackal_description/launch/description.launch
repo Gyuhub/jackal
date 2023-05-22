@@ -6,11 +6,13 @@
   <!-- <arg name="env_runner" value="env_run" /> -->
   <!-- used for creating a virtual model for gazebo -->
   <arg name="gazebo" default="false" />
+  <arg name="gpu" default="false" />
 
   <param name="robot_description"
          command="$(find jackal_description)/scripts/$(arg env_runner)
                     $(find jackal_description)/urdf/configs/$(arg config)
                     $(find xacro)/xacro $(find jackal_description)/urdf/jackal.urdf.xacro
-                    gazebo:=$(arg gazebo)" />
+                    gazebo:=$(arg gazebo)
+                    gpu:=$(arg gpu)" />
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 </launch>
