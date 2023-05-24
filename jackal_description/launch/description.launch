@@ -6,7 +6,7 @@
   <!-- <arg name="env_runner" value="env_run" /> -->
   <!-- used for creating a virtual model for gazebo -->
   <arg name="gazebo" default="false" />
-  <arg name="gpu" default="false" />
+  <arg name="gpu" default="true" />
 
   <param name="robot_description"
          command="$(find jackal_description)/scripts/$(arg env_runner)
